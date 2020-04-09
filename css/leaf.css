@@ -1,9 +1,6 @@
 
 @import url("reset.css");
 
-@import url(https://fonts.googleapis.com/css?family=Oswald);
-/*font-family: 'Oswald', sans-serif;*/
-
 
 html, body { height: 100%; overflow:hidden; background-color:#CCC; font-family:Arial;}
 .wrap {
