@@ -38,8 +38,8 @@ header:hover{background:#dbe000; transition:all 0.4s;}
 .Info div{font-size:13px; line-height:2; color: #111;}
 .Info .text p{ margin-bottom:10px; font-family:"微軟正黑體", sans-serif;font-size:14px; line-height:2; color: #111;}
 
-.close{ width:69px;  display:block; border:0px solid #F00; /*background:url(../images/menu_bt1.png) no-repeat center top;*/ text-indent:-9999px; height: 100%; transition:all 0.4s; cursor:pointer; position:relative; z-index:222;}
-/*.close:hover{background:url(../images/menu_bt1.png) #dbe000 no-repeat center top; transition:all 0.4s;}*/
+.close{ width:69px;  display:block; border:0px solid #F00; text-indent:-9999px; height: 100%; transition:all 0.4s; cursor:pointer; position:relative; z-index:222;}
+.close:hover{background: #dbe000 no-repeat center top; transition:all 0.4s;}
 
 a.booking{ position:fixed; z-index:33; width:80px; height:80px; background:#ff293f; border-radius:1000em; margin-left:10px; color:#FFF; text-decoration:none; text-align:center; line-height:80px; font-family:"微軟正黑體", sans-serif; transition:all 0.4s; top:0; margin-top:10px;}
 a.booking:hover{ background:#1c977e; color:#FFF; transition:all 0.4s;}
