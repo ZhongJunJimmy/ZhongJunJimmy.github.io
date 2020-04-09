@@ -32,14 +32,13 @@ header:hover{background:#dbe000; transition:all 0.4s;}
 .Info p{ font-size:13px; line-height:2; color: #333;}
 .Info h1{ font-family:"微軟正黑體", sans-serif; padding-top:20px; margin-bottom:20px;color:#00693e;}
 .Info h1 span{ color:#aac251;font-family: 'Oswald', sans-serif; font-size:50px;}
-.Info a{ color:#1c977e; text-decoration:none;}
 .Info a span{ padding:1px 7px; display:inline-block; color:#FFF; background:#1c977e; margin-left: 5px; transition:all 0.4s;}
 .Info a:hover span{ background:#3e3e3e; transition:all 0.4s;}
 
 .Info div{font-size:13px; line-height:2; color: #111;}
 .Info .text p{ margin-bottom:10px; font-family:"微軟正黑體", sans-serif;font-size:14px; line-height:2; color: #111;}
 
-.close{ width:69px;  display:block; border:0px solid #F00; background:url(../images/menu_bt1.png) no-repeat center top; text-indent:-9999px; height: 100%; transition:all 0.4s; cursor:pointer; position:relative; z-index:222;}
+.close{ width:69px;  display:block; border:0px solid #F00; /*background:url(../images/menu_bt1.png) no-repeat center top;*/ text-indent:-9999px; height: 100%; transition:all 0.4s; cursor:pointer; position:relative; z-index:222;}
 /*.close:hover{background:url(../images/menu_bt1.png) #dbe000 no-repeat center top; transition:all 0.4s;}*/
 
 a.booking{ position:fixed; z-index:33; width:80px; height:80px; background:#ff293f; border-radius:1000em; margin-left:10px; color:#FFF; text-decoration:none; text-align:center; line-height:80px; font-family:"微軟正黑體", sans-serif; transition:all 0.4s; top:0; margin-top:10px;}
@@ -72,8 +71,7 @@ h3{ border:1px solid #666; padding:5px 15px; border-radius:3px; display: table; 
 .bedPrice tr td{ border-bottom:1px solid #999;}
 .titleIten{ font-weight:900; font-size:15px;}
 
-.bottomDiv{ position:fixed; z-index:2; bottom:15px;}
-.bottomDiv a{ text-decoration:none; font-family:"微軟正黑體", sans-serif; color:#FFF; display: table; float:left; margin:0 5px; border:1px solid #FFF; border-radius:3px; padding:5px 15px; transition:all 0.4s;}
+.bottomDiv{ position:fixed; z-index:2; bottom:60px;}
 a.book{ background:#db0827; border:1px solid #db0827;}
 a.web{ background:#116f5c; border:1px solid #116f5c;}
 .bottomDiv a:hover{ background:#db0827; border:1px solid #db0827; transition:all 0.4s;}
@@ -106,8 +104,6 @@ a.web{ background:#116f5c; border:1px solid #116f5c;}
 .highslide-image {
 	border: 10px solid #fff;
 }
-.highslide-image-blur {
-}
 .highslide-caption {
     display: none;
     border: 5px solid white;
@@ -128,7 +124,7 @@ a.web{ background:#116f5c; border:1px solid #116f5c;}
     background-color: white;
 
     padding-left: 22px;
-    background-image: url(../highslide/graphics/loader.white.gif);
+    background-image: url(../graphics/loader.white.gif);
     background-repeat: no-repeat;
     background-position: 3px 1px;
 }
