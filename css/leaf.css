@@ -34,6 +34,16 @@ header:hover{background:#dbe000; transition:all 0.4s;}
 
 .Info div{font-size:13px; line-height:2; color: #111;}
 .Info .text p{ margin-bottom:10px; font-family:"微軟正黑體", sans-serif;font-size:14px; line-height:2; color: #111;}
+.Info .text img {
+    transition:all .25s linear;
+    -webkit-filter: grayscale(50%); /* Safari */
+    filter: grayscale(50%);
+}
+.Info .text img:hover {
+    transition:all .25s linear;
+    -webkit-filter: grayscale(15%); /* Safari */
+    filter: grayscale(15%);
+}
 
 .close{ width:69px;  display:block; border:0px solid #F00; text-indent:-9999px; height: 100%; transition:all 0.4s; cursor:pointer; position:relative; z-index:222;}
 .close:hover{background: #dbe000 no-repeat center top; transition:all 0.4s;}
@@ -144,4 +154,19 @@ a.highslide-full-expand {
 	margin: 0 10px 10px 0;
 	width: 34px;
 	height: 34px;
+}
+
+.Info p button {
+  border-radius: 3px;
+  background-color: #e7e7e0;
+  color: rgb(0, 54, 9);
+  font-family:"微軟正黑體"
+}
+
+.Info p button:hover {
+  border-radius: 3px;
+  background-color: white; 
+  color: black; 
+  border: 2px solid #e7e7e0;
+  font-family:"微軟正黑體";
 }

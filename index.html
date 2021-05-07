@@ -48,11 +48,6 @@
             } else if (lang === 'en') {
                 document.getElementById("zh-tw_content").style.display = "none"
                 document.getElementById("en_content").style.display = "";
-                document.getElementById("jp_content").style.display = "none"
-            } else if (lang === 'jp') {
-                document.getElementById("zh-tw_content").style.display = "none"
-                document.getElementById("en_content").style.display = "none";
-                document.getElementById("jp_content").style.display = ""
             }
 
         }
@@ -124,29 +119,30 @@
 
         </div>
         <div class="Info">
-            <p style="text-align:right;">Language:
-                <button onclick="showInfoInDifLang('zh-tw')">CH</button>
+            <br/>
+            <p style="text-align:right;">
+                <button onclick="showInfoInDifLang('zh-tw')">中文</button>
                 <button onclick="showInfoInDifLang('en');">EN</button>
-                <button onclick="showInfoInDifLang('jp')">JP</button>
             </p>
             <img src="">
             <div style=" margin:50px auto 10px auto; width:100%;">
                 <div class="text" id="zh-tw_content">
-                    <p>嗨，我是吉米。 </p>
-                    <p>我是一名軟體工程師。</p>
-                    <p>我喜歡攝影及寫程式。</p>
-                    <p>你可以追蹤我的Facebook、Instagram或Github，來認識我。</p>
-                    <p>祝你有愉快的一天。</p>
+                    <p style="font-size:26px; color: #116f5c; text-align: center;">關於我</p>
+                    <hr/>
+                    <img src="images/personal.jpg" style="max-width:100%;height:auto;"><br/>
+                    嗨，我是吉米。<br/>
+                    我是一名軟體工程師。<br />
+                    我喜歡攝影及寫程式。<br />
+                    你可以追蹤我的Facebook、Instagram或Github，來認識我。</p>
                 </div>
                 <div class="text" id="en_content" style=display:none>
-                    <p>Hi, I'm Jimmy. </p>
-                    <p>I'm a software engineer in Taiwan.</p>
-                    <p>I love photography and programming.</p>
-                    <p>If you see it, you can follow me by Facebook, Instagram or Github.</p>
-                    <p>Hope you have a good day.</p>
-                </div>
-                <div class="text" id="jp_content" style=display:none>
-                    <p>日本語がわからない</p>
+                    <p style="font-size:26px; color: #116f5c; text-align: center;">About Me</p>
+                    <hr />
+                    <img src="images/personal.jpg" style="max-width:100%;height:auto;"><br />
+                    <p>Hi, I'm Jimmy. <br />
+                    I'm a software engineer in Taiwan.<br />
+                    I love photography and programming.<br />
+                    If you see it, you can follow me by Facebook, Instagram or Github.</p>
                 </div>
             </div>
 
