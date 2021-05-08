@@ -22,17 +22,23 @@
          if (!isMobile()) {
          top.location.href = location.href.replace("/m","");
          }
+
+         function showInfoInDifLang(lang) {
+            if (lang === 'zh-tw') {
+                document.getElementById("zh-tw_content").style.display = ""
+                document.getElementById("en_content").style.display = "none";
+                document.getElementById("jp_content").style.display = "none"
+            } else if (lang === 'en') {
+                document.getElementById("zh-tw_content").style.display = "none"
+                document.getElementById("en_content").style.display = "";
+            }
+
+        }
       </script>
       <link href="https://getbootstrap.com/docs/5.0/examples/album/" rel="canonical">
       <!-- Bootstrap core CSS -->
       <link href="css/boostrap.min.css" rel="stylesheet" type="text/css">
       <!-- Favicons -->
-      <link href="/docs/5.0/assets/img/favicons/apple-touch-icon.png" rel="apple-touch-icon" sizes="180x180">
-      <link href="/docs/5.0/assets/img/favicons/favicon-32x32.png" rel="icon" sizes="32x32" type="image/png">
-      <link href="/docs/5.0/assets/img/favicons/favicon-16x16.png" rel="icon" sizes="16x16" type="image/png">
-      <link href="/docs/5.0/assets/img/favicons/manifest.json" rel="manifest">
-      <link color="#7952b3" href="/docs/5.0/assets/img/favicons/safari-pinned-tab.svg" rel="mask-icon">
-      <link href="/docs/5.0/assets/img/favicons/favicon.ico" rel="icon">
       <meta content="#7952b3" name="theme-color">
       <style>
          .bd-placeholder-img {
@@ -56,15 +62,30 @@
             <div class="container">
                <div class="row">
                   <div class="col-sm-8 col-md-7 py-4">
-                     <h4 class="text-white">
-                        關於我
-                     </h4>
-                     <img src="../images/personal.jpg" style="max-width:100%;height:auto;-webkit-filter: grayscale(50%); filter: grayscale(50%);"><br/>
-                     <p class="text-muted">
-                        嗨，我是吉米。<br/>
-                        我是一名軟體工程師，我喜歡攝影及寫程式。<br />
-                        你可以追蹤我的Facebook、Instagram或Github，來認識我。
-                     </p>
+                    <div class="text" id="zh-tw_content">
+                       <h4 class="text-white">
+                          關於我
+                       </h4>
+                       <img src="../images/personal.jpg" style="max-width:100%;height:auto;-webkit-filter: grayscale(50%); filter: grayscale(50%);"><br/>
+                       <p class="text-muted">
+                          嗨，我是吉米。<br/>
+                          我是一名軟體工程師，我喜歡攝影及寫程式。<br />
+                          你可以追蹤我的Facebook、Instagram或Github，來認識我。
+                       </p>
+                      </div>
+                      <div class="text" id="en_content" style=display:none>
+                          <h4 class="text-white">About Me</h4>
+                          <img src="../images/personal.jpg" style="max-width:100%;height:auto;-webkit-filter: grayscale(50%); filter: grayscale(50%);"><br/>
+                          <p class="text-muted">Hi, I'm Jimmy. <br />
+                            I'm a software engineer in Taiwan.<br />
+                            I love photography and programming.<br />
+                            If you see it, you can follow me by Facebook, Instagram or Github.
+                          </p>
+                      </div>
+                      <p style="text-align:right;">
+                        <button onclick="showInfoInDifLang('zh-tw')">中文</button>
+                        <button onclick="showInfoInDifLang('en');">EN</button>
+                      </p>
                   </div>
                   <div class="col-sm-4 offset-md-1 py-4">
                      <h4 class="text-white">
@@ -151,19 +172,6 @@
                            <p class="card-text">
                               網站建置中
                            </p>
-                           <div class="d-flex justify-content-between align-items-center">
-                              <div class="btn-group">
-                                 <button class="btn btn-sm btn-outline-secondary" type="button">
-                                 View
-                                 </button>
-                                 <button class="btn btn-sm btn-outline-secondary" type="button">
-                                 Edit
-                                 </button>
-                              </div>
-                              <small class="text-muted">
-                              9 mins
-                              </small>
-                           </div>
                         </div>
                      </div>
                   </div>
