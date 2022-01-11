@@ -1,78 +1,336 @@
-
 @import url("reset.css");
+html,
+body {
+    height: 100%;
+    overflow: hidden;
+    background-color: #CCC;
+    font-family: Arial;
+}
 
-
-html, body { height: 100%; overflow:hidden; background-color:#CCC; font-family:Arial;}
 .wrap {
- min-height: 100%;
- *display: table; /* For IE7 Hack */
- *height: 100%; /* For IE7 Hack */
+    min-height: 100%;
+    *display: table;
+    /* For IE7 Hack */
+    *height: 100%;
+    /* For IE7 Hack */
 }
-.main { overflow:auto; /*padding-bottom: 230px; */} /* must be same height as the footer */
+
+.main {
+    overflow: auto;
+    /*padding-bottom: 230px; */
+}
+
+
+/* must be same height as the footer */
+
 #footer {
- position: relative;
- margin-top: -230px; /* negative value of footer height */
- height: 230px;
- clear:both;
- display:none;
+    position: relative;
+    margin-top: -230px;
+    /* negative value of footer height */
+    height: 230px;
+    clear: both;
+    display: none;
 }
 
-header{ transition:all 0.4s; background:none; height: 100%; border-right: 1px solid #CCC;}
-header:hover{background:#dbe000; transition:all 0.4s;}
+header {
+    transition: all 0.4s;
+    background: none;
+    height: 100%;
+    border-right: 1px solid #CCC;
+}
 
-.menu{ background:url(../images/menu.png) no-repeat center; width:50px; height:50px; position: absolute; z-index:2; bottom:20px; margin-left: 9px;}
+header:hover {
+    background: #dbe000;
+    transition: all 0.4s;
+}
 
-#RightDiv{ width:570px; height:100%; min-height:100%; max-height:100%; position:absolute; z-index:999; background: url(../images/menu_bg.png) repeat; float:right; right:0px;}
-.TheButton{float:left; left:0px; border:0px solid #F00; width:70px; height:100%;}
+.menu {
+    background: url(../images/menu.png) no-repeat center;
+    width: 50px;
+    height: 50px;
+    position: absolute;
+    z-index: 2;
+    bottom: 20px;
+    margin-left: 9px;
+}
 
-.Info{ width:445px; float: right; right:0px; height:100%; padding-right:20px; /*border-left:1px solid #CCC;*/ padding-left:20px; overflow: auto;}
-.Info p{ font-size:13px; line-height:2; color: #333;}
-.Info h1{ font-family:"Arial", sans-serif; padding-top:20px; margin-bottom:20px;color:#00693e;}
-.Info h1 span{ color:#aac251;font-family: 'Oswald', sans-serif; font-size:50px;}
-.Info a span{ padding:1px 7px; display:inline-block; color:#FFF; background:#1c977e; margin-left: 5px; transition:all 0.4s;}
-.Info a:hover span{ background:#3e3e3e; transition:all 0.4s;}
+#RightDiv {
+    width: 570px;
+    height: 100%;
+    min-height: 100%;
+    max-height: 100%;
+    position: absolute;
+    z-index: 999;
+    background: url(../images/menu_bg.png) repeat;
+    float: right;
+    right: 0px;
+}
 
-.Info div{font-size:13px; line-height:2; color: #111;}
-.Info .text p{ word-wrap: break-word; margin-bottom:10px; font-family:"Arial", sans-serif;font-size:16px; line-height:2; color: rgba(0,0,0,.8);}
+.TheButton {
+    float: left;
+    left: 0px;
+    border: 0px solid #F00;
+    width: 70px;
+    height: 100%;
+}
 
+.Info {
+    width: 445px;
+    float: right;
+    right: 0px;
+    height: 100%;
+    padding-right: 20px;
+    /*border-left:1px solid #CCC;*/
+    padding-left: 20px;
+    overflow: auto;
+}
 
-.close{ width:69px;  display:block; border:0px solid #F00; text-indent:-9999px; height: 100%; transition:all 0.4s; cursor:pointer; position:relative; z-index:222;}
-.close:hover{background: #dbe000 no-repeat center top; transition:all 0.4s;}
+.Info p {
+    font-size: 13px;
+    line-height: 2;
+    color: #333;
+}
 
-a.booking{ position:fixed; z-index:33; width:80px; height:80px; background:#ff293f; border-radius:1000em; margin-left:10px; color:#FFF; text-decoration:none; text-align:center; line-height:80px; font-family:"Arial", sans-serif; transition:all 0.4s; top:0; margin-top:10px;}
-a.booking:hover{ background:#1c977e; color:#FFF; transition:all 0.4s;}
+.Info h1 {
+    font-family: "Arial", sans-serif;
+    padding-top: 20px;
+    margin-bottom: 5px;
+    color: #00693e;
+}
 
-a.bookingNow{ background:#ff293f; color:#FFF; text-decoration:none; text-align:center; font-family:"Arial", sans-serif; transition:all 0.4s; top:0; margin-top:10px; padding:8px 15px; float:right; margin-bottom: 20px;}
-a.bookingNow:hover{ background:#1c977e; color:#FFF; transition:all 0.4s;}
+.Info h1 span {
+    color: #aac251;
+    font-family: 'Oswald', sans-serif;
+    font-size: 50px;
+}
 
-h3{ border:1px solid #666; padding:5px 15px; border-radius:3px; display: table; margin-top: 20px; margin-bottom: 10px;}
+.Info a span {
+    padding: 1px 7px;
+    display: inline-block;
+    color: #FFF;
+    background: #1c977e;
+    margin-left: 5px;
+    transition: all 0.4s;
+}
 
-.map{ height:32px; background:url(../images/map.png) left center no-repeat; padding-left:30px;}
-.tel{ height:26px; background:url(../images/tel.png) left center no-repeat; padding-left:30px;}
-.fax{ height:26px; background:url(../images/fax.png) left center no-repeat; padding-left:30px;}
-.mail{ height:26px; background:url(../images/mail.png) left center no-repeat; padding-left:30px; margin-bottom:30px;}
+.Info a:hover span {
+    background: #3e3e3e;
+    transition: all 0.4s;
+}
 
-#footer a.copyright{background:url(../images/copyright.png) no-repeat; width:11px; height:226px; display:block;float:left; left:0px; border:0px solid #F00; margin-right:5px; text-indent:-9999px;}
-#footer a.copyright:hover{background:url(../images/copyright_hover.png) no-repeat;}
-.links_div{float:left; left:0px; width:70px; border:0px solid #F00; padding-left:10px; margin-top:120px; padding-right:20px;}
-.links_div a.links{ float:left; left:0px; text-decoration:none; color:#000;font-family:"Arial", sans-serif; padding:0 8px; text-align:center; display:block; width:15px;}
-.links_div a.links:hover{ color:#aac251;}
+.Info div {
+    font-size: 13px;
+    line-height: 2;
+    color: #111;
+}
 
-.links_bt_div{border-top:2px solid #b3d6c7; overflow:hidden; clear:both; padding-top:10px; width:100%;}
+.Info .text p {
+    font-family: "Arial";
+    font-size: 14px;
+    color: rgba(0, 0, 0, .8);
+}
 
-.links_bt_div a.fb{background:url(../images/fb.png) no-repeat; width:26px; height:26px; text-indent:-9999px; display:block; float:left; left:0px; margin-right:5px; margin-left:5px;}
-.links_bt_div a.fb:hover{background:url(../images/fb_hover.png) no-repeat;}
-.links_bt_div a.g{background:url(../images/g.png) no-repeat; width:26px; height:26px; text-indent:-9999px; display:block; float:left; left:0px;}
-.links_bt_div a.g:hover{background:url(../images/g_hover.png) no-repeat;}
+.close {
+    width: 69px;
+    display: block;
+    border: 0px solid #F00;
+    text-indent: -9999px;
+    height: 100%;
+    transition: all 0.4s;
+    cursor: pointer;
+    position: relative;
+    z-index: 222;
+}
 
-.bedPrice{ font-size:13px; line-height:2.5;}
-.bedPrice tr td{ border-bottom:1px solid #999;}
-.titleIten{ font-weight:900; font-size:15px;}
+.close:hover {
+    background: #dbe000 no-repeat center top;
+    transition: all 0.4s;
+}
 
-.bottomDiv{ position:fixed; z-index:2; bottom:60px;}
-a.book{ background:#db0827; border:1px solid #db0827;}
-a.web{ background:#116f5c; border:1px solid #116f5c;}
-.bottomDiv a:hover{ background:#db0827; border:1px solid #db0827; transition:all 0.4s;}
+a.booking {
+    position: fixed;
+    z-index: 33;
+    width: 80px;
+    height: 80px;
+    background: #ff293f;
+    border-radius: 1000em;
+    margin-left: 10px;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    line-height: 80px;
+    font-family: "Arial", sans-serif;
+    transition: all 0.4s;
+    top: 0;
+    margin-top: 10px;
+}
+
+a.booking:hover {
+    background: #1c977e;
+    color: #FFF;
+    transition: all 0.4s;
+}
+
+a.bookingNow {
+    background: #ff293f;
+    color: #FFF;
+    text-decoration: none;
+    text-align: center;
+    font-family: "Arial", sans-serif;
+    transition: all 0.4s;
+    top: 0;
+    margin-top: 10px;
+    padding: 8px 15px;
+    float: right;
+    margin-bottom: 20px;
+}
+
+a.bookingNow:hover {
+    background: #1c977e;
+    color: #FFF;
+    transition: all 0.4s;
+}
+
+.map {
+    height: 32px;
+    background: url(../images/map.png) left center no-repeat;
+    padding-left: 30px;
+}
+
+.tel {
+    height: 26px;
+    background: url(../images/tel.png) left center no-repeat;
+    padding-left: 30px;
+}
+
+.fax {
+    height: 26px;
+    background: url(../images/fax.png) left center no-repeat;
+    padding-left: 30px;
+}
+
+.mail {
+    height: 26px;
+    background: url(../images/mail.png) left center no-repeat;
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+#footer a.copyright {
+    background: url(../images/copyright.png) no-repeat;
+    width: 11px;
+    height: 226px;
+    display: block;
+    float: left;
+    left: 0px;
+    border: 0px solid #F00;
+    margin-right: 5px;
+    text-indent: -9999px;
+}
+
+#footer a.copyright:hover {
+    background: url(../images/copyright_hover.png) no-repeat;
+}
+
+.links_div {
+    float: left;
+    left: 0px;
+    width: 70px;
+    border: 0px solid #F00;
+    padding-left: 10px;
+    margin-top: 120px;
+    padding-right: 20px;
+}
+
+.links_div a.links {
+    float: left;
+    left: 0px;
+    text-decoration: none;
+    color: #000;
+    font-family: "Arial", sans-serif;
+    padding: 0 8px;
+    text-align: center;
+    display: block;
+    width: 15px;
+}
+
+.links_div a.links:hover {
+    color: #aac251;
+}
+
+.links_bt_div {
+    border-top: 2px solid #b3d6c7;
+    overflow: hidden;
+    clear: both;
+    padding-top: 10px;
+    width: 100%;
+}
+
+.links_bt_div a.fb {
+    background: url(../images/fb.png) no-repeat;
+    width: 26px;
+    height: 26px;
+    text-indent: -9999px;
+    display: block;
+    float: left;
+    left: 0px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+
+.links_bt_div a.fb:hover {
+    background: url(../images/fb_hover.png) no-repeat;
+}
+
+.links_bt_div a.g {
+    background: url(../images/g.png) no-repeat;
+    width: 26px;
+    height: 26px;
+    text-indent: -9999px;
+    display: block;
+    float: left;
+    left: 0px;
+}
+
+.links_bt_div a.g:hover {
+    background: url(../images/g_hover.png) no-repeat;
+}
+
+.bedPrice {
+    font-size: 13px;
+    line-height: 2.5;
+}
+
+.bedPrice tr td {
+    border-bottom: 1px solid #999;
+}
+
+.titleIten {
+    font-weight: 900;
+    font-size: 15px;
+}
+
+.bottomDiv {
+    position: fixed;
+    z-index: 2;
+    bottom: 60px;
+}
+
+a.book {
+    background: #db0827;
+    border: 1px solid #db0827;
+}
+
+a.web {
+    background: #116f5c;
+    border: 1px solid #116f5c;
+}
+
+.bottomDiv a:hover {
+    background: #db0827;
+    border: 1px solid #db0827;
+    transition: all 0.4s;
+}
 
 .bottomDiv .fa {
     padding: 10px;
@@ -102,82 +360,100 @@ a.web{ background:#116f5c; border:1px solid #116f5c;}
     color: white;
 }
 
-.Info .profile-photo{
-    transform:rotate(-28deg);
-    max-width:60%;
+.Info .profile-photo {
+    transform: rotate(-28deg);
+    max-width: 60%;
     border-radius: 50%;
     border: 3px solid #116f5c;
-    display:block; 
-    margin:auto;
-    transition:all .25s linear;
-    -webkit-filter: grayscale(50%); /* Safari */
+    display: block;
+    margin: auto;
+    transition: all .25s linear;
+    -webkit-filter: grayscale(50%);
+    /* Safari */
     filter: grayscale(50%);
 }
+
 .Info .profile-photo:hover {
-    transition:all .25s linear;
-    -webkit-filter: grayscale(15%); /* Safari */
+    transition: all .25s linear;
+    -webkit-filter: grayscale(15%);
+    /* Safari */
     filter: grayscale(15%);
 }
 
+
 /*LIGHTBOX*/
+
 .highslide-wrapper div {
     font-family: Verdana, Helvetica;
     font-size: 10pt;
 }
+
 .highslide {
-	cursor: url(graphics/zoomin.cur), pointer;
+    cursor: url(graphics/zoomin.cur), pointer;
     outline: none;
     text-decoration: none;
 }
+
 .highslide-active-anchor img {
-	visibility: hidden;
+    visibility: hidden;
 }
-.highslide-wrapper, .drop-shadow {
-	background: white;
+
+.highslide-wrapper,
+.drop-shadow {
+    background: white;
 }
+
 .highslide img {
-	border: 4px solid #666; transition:all 0.4s;
+    border: 4px solid #666;
+    transition: all 0.4s;
 }
+
 .highslide:hover img {
-	border: 4px solid #dbe000; transition:all 0.4s;
+    border: 4px solid #dbe000;
+    transition: all 0.4s;
 }
+
 .highslide-wrapper {
-	background: white;
+    background: white;
 }
+
 .highslide-image {
-	border: 10px solid #fff;
+    border: 10px solid #fff;
 }
+
 .highslide-caption {
     display: none;
     border: 5px solid white;
     border-top: none;
-    padding:0px 5px 5px 5px;
+    padding: 0px 5px 5px 5px;
     background-color: white;
-	color:#333;
+    color: #333;
 }
+
 .highslide-loading {
     display: block;
-	color: black;
-	font-size: 8pt;
-	font-family: sans-serif;
-	font-weight: bold;
+    color: black;
+    font-size: 8pt;
+    font-family: sans-serif;
+    font-weight: bold;
     text-decoration: none;
-	padding: 2px;
-	border: 1px solid black;
+    padding: 2px;
+    border: 1px solid black;
     background-color: white;
-
     padding-left: 22px;
     background-image: url(../graphics/loader.white.gif);
     background-repeat: no-repeat;
     background-position: 3px 1px;
 }
+
 a.highslide-credits,
 a.highslide-credits i {
     padding: 2px;
     color: silver;
     text-decoration: none;
-	font-size: 10px;
+    font-size: 10px;
 }
+
 a.highslide-credits:hover,
 a.highslide-credits:hover i {
     color: white;
@@ -185,25 +461,24 @@ a.highslide-credits:hover i {
 }
 
 a.highslide-full-expand {
-	background: url(../highslide/graphics/fullexpand.gif) no-repeat;
-	display: block;
-	margin: 0 10px 10px 0;
-	width: 34px;
-	height: 34px;
+    background: url(../highslide/graphics/fullexpand.gif) no-repeat;
+    display: block;
+    margin: 0 10px 10px 0;
+    width: 34px;
+    height: 34px;
 }
 
 .Info p button {
-  border-radius: 3px;
-  background-color: #e7e7e0;
-  color: rgb(0, 54, 9);
-  font-family:"Arial"
+    border-radius: 3px;
+    background-color: #e7e7e0;
+    color: rgb(0, 54, 9);
+    font-family: "Arial"
 }
 
 .Info p button:hover {
-  border-radius: 3px;
-  background-color: white; 
-  color: black; 
-  border: 2px solid #e7e7e0;
-  font-family:"Arial";
+    border-radius: 3px;
+    background-color: white;
+    color: black;
+    border: 2px solid #e7e7e0;
+    font-family: "Arial";
 }
-
