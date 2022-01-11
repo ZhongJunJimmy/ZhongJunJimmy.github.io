@@ -39,17 +39,6 @@
           document.location.href="m/index.html";
         }
         
-
-        function showInfoInDifLang(lang) {
-            if (lang === 'zh-tw') {
-                document.getElementById("zh-tw_content").style.display = "";
-                document.getElementById("en_content").style.display = "none";
-            } else if (lang === 'en') {
-                document.getElementById("zh-tw_content").style.display = "none"
-                document.getElementById("en_content").style.display = "";
-            }
-
-        }
     </script>
     <meta name="google-site-verification" content="cEShAWqY3ZxwFz__zzpzjwgr3gVV1pVsUml0O7rnd60" />
     <meta name="msvalidate.01" content="6871C5CF483B81D70592AC9193F6018C" />
@@ -74,39 +63,12 @@
     <!-- End Google Tag Manager -->
 
     <style>
-        .fa {
-            padding: 10px;
-            font-size: 30px;
-            width: 30px;
-            text-align: center;
-            text-decoration: none;
-            margin: 1px 2px;
-        }
         
-        .fa:hover {
-            opacity: 0.7;
-        }
-        
-        .fa-facebook {
-            background: #3B5998;
-            color: white;
-        }
-        
-        .fa-Instagram {
-            background: #DD2A78;
-            color: white;
-        }
-        
-        .fa-github {
-            background: rgb(0, 0, 0);
-            color: white;
-        }
     </style>
 </head>
 
 <body>
     <div id="RightDiv">
-
         <div class="TheButton">
             <div class="wrap">
                 <header>
@@ -118,28 +80,25 @@
 
         </div>
         <div class="Info">
-            <br/>
-            <div style=" margin:50px auto 10px auto; width:100%;">
+            <div style=" margin:30px auto 10px auto; width:100%;">
+                <img src="images/profile.jpg" class="profile-photo"><br />
                 <div class="text" id="content">
+                    
                     <p style="font-size:26px; color: #116f5c; text-align: center;">About Me</p>
                     <hr />
-                    <img src="images/personal.jpg" style="max-width:50%;height:auto;"><br />
-                    <p style="font-style: Arial;">Hi, I'm Jimmy Wu from Taiwan. <br />
-                    I love programming as well as taking photo and learn new things!.<br />
-                    If you see it, you can follow me by Facebook, Instagram or Github.</p>
-                    
-                    
+                    <p>Hi, I'm Jimmy from Taiwan. I love programming as well as taking photo and learn new things. </p>
                 </div>
+                
             </div>
 
         </div>
-    </div>
     </div>
     <div class="bottomDiv" >
         <a class="fa fa-facebook" target="_blank" href="https://www.facebook.com/Jimmy.Wuuu.Tw"></a>
         <a class="fa fa-instagram" target="_blank" href="https://www.instagram.com/letthetimestop/?hl=zh-tw"></a>
         <a class="fa fa-github" target="_blank" href="https://github.com/ZhongJunJimmy"></a>
     </div>
+    
     <!--背景滿版左右按鈕控制-->
     <div id="navigation">
         <a id="prevslide"></a>
