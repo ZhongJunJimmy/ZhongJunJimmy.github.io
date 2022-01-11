@@ -42,9 +42,8 @@
 
         function showInfoInDifLang(lang) {
             if (lang === 'zh-tw') {
-                document.getElementById("zh-tw_content").style.display = ""
+                document.getElementById("zh-tw_content").style.display = "";
                 document.getElementById("en_content").style.display = "none";
-                document.getElementById("jp_content").style.display = "none"
             } else if (lang === 'en') {
                 document.getElementById("zh-tw_content").style.display = "none"
                 document.getElementById("en_content").style.display = "";
@@ -120,28 +119,16 @@
         </div>
         <div class="Info">
             <br/>
-            <p style="text-align:right;">
-                <button onclick="showInfoInDifLang('zh-tw')">中文</button>
-                <button onclick="showInfoInDifLang('en');">EN</button>
-            </p>
             <div style=" margin:50px auto 10px auto; width:100%;">
-                <div class="text" id="zh-tw_content">
-                    <p style="font-size:26px; color: #116f5c; text-align: center;">關於我</p>
-                    <hr/>
-                    <img src="images/personal.jpg" style="max-width:100%;height:auto;"><br/>
-                    嗨，我是吉米。<br/>
-                    我是一名軟體工程師。<br />
-                    我喜歡攝影及寫程式。<br />
-                    你可以追蹤我的Facebook、Instagram或Github，來認識我。</p>
-                </div>
-                <div class="text" id="en_content" style=display:none>
+                <div class="text" id="content">
                     <p style="font-size:26px; color: #116f5c; text-align: center;">About Me</p>
                     <hr />
-                    <img src="images/personal.jpg" style="max-width:100%;height:auto;"><br />
-                    <p>Hi, I'm Jimmy. <br />
-                    I'm a software engineer in Taiwan.<br />
-                    I love photography and programming.<br />
+                    <img src="images/personal.jpg" style="max-width:50%;height:auto;"><br />
+                    <p style="font-style: Arial;">Hi, I'm Jimmy Wu from Taiwan. <br />
+                    I love programming as well as taking photo and learn new things!.<br />
                     If you see it, you can follow me by Facebook, Instagram or Github.</p>
+                    
+                    
                 </div>
             </div>
 
@@ -151,7 +138,7 @@
     <div class="bottomDiv" >
         <a class="fa fa-facebook" target="_blank" href="https://www.facebook.com/Jimmy.Wuuu.Tw"></a>
         <a class="fa fa-instagram" target="_blank" href="https://www.instagram.com/letthetimestop/?hl=zh-tw"></a>
-        <a class="fa fa-github" target="_blank" href="https://github.com/xiguanTw"></a>
+        <a class="fa fa-github" target="_blank" href="https://github.com/ZhongJunJimmy"></a>
     </div>
     <!--背景滿版左右按鈕控制-->
     <div id="navigation">
