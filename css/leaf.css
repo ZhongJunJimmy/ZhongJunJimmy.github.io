@@ -55,7 +55,7 @@ header:hover {
 }
 
 #RightDiv {
-    width: 570px;
+    width: 600px;
     height: 100%;
     min-height: 100%;
     max-height: 100%;
@@ -75,13 +75,13 @@ header:hover {
 }
 
 .Info {
-    width: 445px;
+    width: 490px;
     float: right;
     right: 0px;
     height: 100%;
-    padding-right: 20px;
+    padding-right: 10px;
     /*border-left:1px solid #CCC;*/
-    padding-left: 20px;
+    padding-left: 0px;
     overflow: auto;
 }
 
@@ -94,7 +94,7 @@ header:hover {
 .Info h1 {
     font-family: "Arial", sans-serif;
     padding-top: 20px;
-    margin-bottom: 5px;
+    margin-bottom: 20px;
     color: #00693e;
 }
 
@@ -102,6 +102,10 @@ header:hover {
     color: #aac251;
     font-family: 'Oswald', sans-serif;
     font-size: 50px;
+}
+
+.Info h2 {
+    color: #00693e;
 }
 
 .Info a span {
@@ -125,8 +129,11 @@ header:hover {
 }
 
 .Info .text p {
-    font-family: "Arial";
-    font-size: 14px;
+    word-wrap: break-word;
+    margin-bottom: 10px;
+    font-family: "Arial", sans-serif;
+    font-size: 16px;
+    line-height: 2;
     color: rgba(0, 0, 0, .8);
 }
 
@@ -189,6 +196,15 @@ a.bookingNow:hover {
     background: #1c977e;
     color: #FFF;
     transition: all 0.4s;
+}
+
+h3 {
+    border: 1px solid #666;
+    padding: 5px 15px;
+    border-radius: 3px;
+    display: table;
+    margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 .map {
