@@ -24,9 +24,10 @@
 <h1>發票對獎</h1>
 <div>
     <b>選擇月份:</b>
-    <select id="cam-list">
-        <option value="environment" selected>11-12月</option>
-        <option value="user">9-10月</option>
+    <select id="select-period">
+        <option value="none" selected>請選擇月份</option>
+        <option value="nov-dec">11-12月</option>
+        <option value="sep-oct">9-10月</option>
     </select>
 </div>
 <div>
@@ -120,12 +121,8 @@
         scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
     });
 
-    document.getElementById('start-button').addEventListener('click', () => {
+    document.getElementById('select-period').addEventListener('change', (e)=>{
         scanner.start();
-    });
-
-    document.getElementById('stop-button').addEventListener('click', () => {
-        scanner.stop();
     });
 
 </script>
