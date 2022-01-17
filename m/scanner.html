@@ -86,6 +86,7 @@
 
     function setResult(label, result) {
         if(result !== "**" && result !== lastResult){
+            console.log(result);
             lastResult = result;
             label.textContent = result;
             camQrResultTimestamp.textContent = new Date().toString();
