@@ -3,7 +3,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>QR Scanner Demo</title>
+    <title>發票對獎</title>
 </head>
 <body>
 <style>
@@ -21,31 +21,31 @@
         display: none;
     }
 </style>
-<h1>Scan from WebCam:</h1>
+<h1>發票對獎</h1>
 <div>
-    <video id="qr-video"></video>
+    <b>選擇月份:</b>
+    <select id="cam-list">
+        <option value="environment" selected>11-12月</option>
+        <option value="user">9-10月</option>
+    </select>
+</div>
+<div>
+    <video id="canvas"></video>
     <br>
     <label>
+        
         <input id="show-scan-region" type="checkbox">
         Show scan region
     </label>
 </div>
-<b>Device has camera: </b>
 <span id="cam-has-camera"></span>
-<br>
 <div>
-    <b>Preferred camera:</b>
+    <b>鏡頭:</b>
     <select id="cam-list">
-        <option value="environment" selected>Environment Facing (default)</option>
+        <option value="environment" selected>預設鏡頭</option>
         <option value="user">User Facing</option>
     </select>
 </div>
-<b>Camera has flash: </b>
-<span id="cam-has-flash"></span>
-<div>
-    <button id="flash-toggle">📸 Flash: <span id="flash-state">off</span></button>
-</div>
-<br>
 <b>Detected QR code: </b>
 <span id="cam-qr-result">None</span>
 <br>
