@@ -4,7 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>發票對獎</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
     <link href="./css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
@@ -28,19 +27,17 @@
 <div class="px-4 py-5 my-5 text-center">
     <h1 class="display-5 fw-bold">發票對獎</h1>
     <div class="col-lg-6 mx-auto">
-        <b>選擇月份:</b>
-        <select id="select-period">
-            <option value="none" selected>請選擇月份</option>
+        <select class="form-select" aria-label="Default select example">
+            <option value="none" selected>選擇月份</option>
             <option value="nov-dec">11-12月</option>
             <option value="sep-oct">9-10月</option>
-        </select>
+          </select>
         <div>
             <video id="qr-video"></video>
             <br>
         </div>
         <div>
-            <b>鏡頭:</b>
-            <select id="cam-list">
+            <select id="cam-list" class="form-select" aria-label="Default select example">
                 <option value="environment" selected>預設鏡頭</option>
                 <option value="user">User Facing</option>
             </select>
@@ -128,5 +125,6 @@
     });
 
 </script>
+<script src="./js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
