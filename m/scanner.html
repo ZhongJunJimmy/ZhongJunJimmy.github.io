@@ -85,13 +85,10 @@
     const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
 
     function setResult(label, result) {
-        console.log(typeof result);
-        console.log(result.replace(/ /g, "").length);
         if(result.replace(/ /g, "").length > 10 && result !== lastResult){
-            result = result.substring(0, 10)
-            console.log(result);
-            lastResult = result;
-            label.textContent = result;
+            let billId = result.substring(0, 10)
+            lastResult = billId;
+            label.textContent = billId;
             camQrResultTimestamp.textContent = new Date().toString();
             label.style.color = 'teal';
             clearTimeout(label.highlightTimeout);
