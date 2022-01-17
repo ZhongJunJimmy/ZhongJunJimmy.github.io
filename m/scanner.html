@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <title>發票對獎</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
+    <link href="./css/bootstrap.min.css" rel="stylesheet" />
 </head>
 <body>
 <style>
@@ -20,49 +22,44 @@
     #flash-toggle {
         display: none;
     }
-
-    .rc{
-        position: absolute;
-        border-width: 18.5px 130px;
-        border-style: solid;
-        border-color: rgba(0, 0, 0, 0.48);
-        box-sizing: border-box;
-        inset: 0px;
-    }
+    
 </style>
+
 <h1>發票對獎</h1>
 <div>
-    <b>選擇月份:</b>
-    <select id="select-period">
-        <option value="none" selected>請選擇月份</option>
-        <option value="nov-dec">11-12月</option>
-        <option value="sep-oct">9-10月</option>
-    </select>
-</div>
-<div>
-    <div class="rc"><video id="qr-video"></video></div>
+    <div>
+        <b>選擇月份:</b>
+        <select id="select-period">
+            <option value="none" selected>請選擇月份</option>
+            <option value="nov-dec">11-12月</option>
+            <option value="sep-oct">9-10月</option>
+        </select>
+    </div>
+    <div>
+        <video id="qr-video"></video>
+        <br>
+        <label>
+            <input id="show-scan-region" type="checkbox">
+            Show scan region
+        </label>
+    </div>
+    <span id="cam-has-camera"></span>
+    <div>
+        <b>鏡頭:</b>
+        <select id="cam-list">
+            <option value="environment" selected>預設鏡頭</option>
+            <option value="user">User Facing</option>
+        </select>
+    </div>
+    <b>Detected QR code: </b>
+    <span id="cam-qr-result">None</span>
     <br>
-    <label>
-        <input id="show-scan-region" type="checkbox">
-        Show scan region
-    </label>
+    <b>Last detected at: </b>
+    <span id="cam-qr-result-timestamp"></span>
 </div>
-<span id="cam-has-camera"></span>
-<div>
-    <b>鏡頭:</b>
-    <select id="cam-list">
-        <option value="environment" selected>預設鏡頭</option>
-        <option value="user">User Facing</option>
-    </select>
-</div>
-<b>Detected QR code: </b>
-<span id="cam-qr-result">None</span>
-<br>
-<b>Last detected at: </b>
-<span id="cam-qr-result-timestamp"></span>
-<br>
-<button id="start-button">Start</button>
-<button id="stop-button">Stop</button>
+
+
+
 
 <script type="module">
     import QrScanner from "./js/qr-scanner.min.js";
