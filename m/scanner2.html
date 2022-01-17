@@ -1,0 +1,32 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>發票對獎</title>
+    <script src="https://raw.githubusercontent.com/mebjas/html5-qrcode/master/minified/html5-qrcode.min.js"></script>
+    <script>
+        function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+            console.log(`Scan result: ${decodedText}`, decodedResult);
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+</head>
+<body>
+
+<h1>發票對獎</h1>
+<div>
+    <b>選擇月份:</b>
+    <select id="select-period">
+        <option value="nov-dec" selected>11-12月</option>
+        <option value="sep-oct">9-10月</option>
+    </select>
+</div>
+<div style="width: 500px" id="reader"></div>
+
+</body>
+</html>
