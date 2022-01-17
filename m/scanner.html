@@ -85,7 +85,8 @@
     const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
 
     function setResult(label, result) {
-        if(result !== "**" && result !== lastResult){
+        if(result.length > 10 && result !== lastResult){
+            result = result.substring(0, 10)
             console.log(result);
             lastResult = result;
             label.textContent = result;
