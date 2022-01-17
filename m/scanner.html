@@ -20,6 +20,16 @@
     #flash-toggle {
         display: none;
     }
+
+    .rc{
+        width: 250px;
+        height: 250px;
+        border-radius: 100%;
+        -webkit-mask-image: -webkit-radial-gradient(circle, white 100%, black 100%);
+        -webkit-transform: rotate(0.000001deg); 
+        -webkit-border-radius: 100%; 
+        -moz-border-radius: 100%;
+    }
 </style>
 <h1>發票對獎</h1>
 <div>
@@ -31,7 +41,7 @@
     </select>
 </div>
 <div>
-    <video id="qr-video"></video>
+    <div class="rc"><video id="qr-video"></video></div>
     <br>
     <label>
         <input id="show-scan-region" type="checkbox">
