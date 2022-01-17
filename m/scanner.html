@@ -87,7 +87,7 @@
     function setResult(label, result) {
         if(result.replace(/ /g, "").length > 10 && result !== lastResult){
             let billId = result.substring(0, 10)
-            lastResult = billId;
+            lastResult = result;
             label.textContent = billId;
             camQrResultTimestamp.textContent = new Date().toString();
             label.style.color = 'teal';
