@@ -85,6 +85,7 @@
     const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
 
     function setResult(label, result) {
+        console.log(result);
         if(result.replace(/ /g, "").length > 10 && result !== lastResult){
             let billId = result.substring(0, 10)
             lastResult = result;
