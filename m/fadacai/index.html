@@ -69,7 +69,9 @@
                   </thead>
                   <tbody id="resultTbody" >
                     <tr>
-                      <td>無對獎結果</td>
+                      <td id = "tdDate">無對獎結果</td>
+                      <td id = "tdID"></td>
+                      <td id = "tdResult"></td>
                     </tr>
                   </tbody>
                 </table>
@@ -112,22 +114,16 @@
       if(result.substring(0, 2) !== '**' && result !== lastResult){
          let billId = result.substring(0, 10);
          let strDate = result.substring(11, 18);
+         let matchResult = "nan";
          lastResult = result;
          label.textContent = billId;
          camQrResultTimestamp.textContent = new Date().toString();
          label.style.color = 'teal';
          clearTimeout(label.highlightTimeout);
          label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-         // create new row
-         let row=document.createElement("tr"); //建立行
-         let td1=document.createElement("td"); //建立單元格
-
-         td1.appendChild(document.createTextNode(`${strDate.substring(0, 3)}年${strDate.substring(3, 6)}月${strDate.substring(6, 8)}日`)); //為單元格新增內容
-         td1.appendChild(document.createTextNode(billId)); //為單元格新增內容
-         td1.appendChild(document.createTextNode("test")); //為單元格新增內容
-         row.appendChild(td1); //將單元格新增到行內
-
-         document.getElementById("resultTbody").append(row); //將行新增到<tbody>中
+         document.getElementById("tdDate").innerHTML=`<p>${strDate.substring(0, 3)}年${strDate.substring(3, 5)}月${strDate.substring(5, 7)}日</p>`
+         document.getElementById("tdID").innerHTML=`<p>${billId}</p>`
+         document.getElementById("tdResult").innerHTML=`<p>${matchResult}</p>`
       }
         
     }
