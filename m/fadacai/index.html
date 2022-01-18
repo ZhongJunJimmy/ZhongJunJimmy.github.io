@@ -120,14 +120,15 @@
          let tdID=document.createElement("td"); //建立單元格
          let tdResult=document.createElement("td"); //建立單元格
 
-         tdDate.appendChild(document.createTextNode(`<p>${strDate.substring(0, 3)}年${strDate.substring(3, 5)}月${strDate.substring(5, 7)}日</p>`)); //為單元格新增內容
-         tdID.appendChild(document.createTextNode(`<p>${billId}</p>`)); //為單元格新增內容
-         tdResult.appendChild(document.createTextNode(`<p>${matchResult}</p>`)); //為單元格新增內容
+         tdDate.appendChild(document.createTextNode(`${strDate.substring(0, 3)}-${strDate.substring(3, 5)}-${strDate.substring(5, 7)}`)); //為單元格新增內容
+         tdID.appendChild(document.createTextNode(`${billId}`)); //為單元格新增內容
+         tdResult.appendChild(document.createTextNode(`${matchResult}`)); //為單元格新增內容
          row.appendChild(tdDate); //將單元格新增到行內
          row.appendChild(tdID); //將單元格新增到行內
          row.appendChild(tdResult); //將單元格新增到行內
          document.getElementById("resultTbody").append(row); //將行新增到<tbody>中
       }
+      console.log(document.getElementById("resultTbody"));
         
     }
 
