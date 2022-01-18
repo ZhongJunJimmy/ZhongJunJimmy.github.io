@@ -99,7 +99,6 @@
     var lastResult = "";
     const video = document.getElementById('qr-video');
     const camHasCamera = document.getElementById('cam-has-camera');
-    const camList = document.getElementById('cam-list');
     const flashToggle = document.getElementById('flash-toggle');
     const flashState = document.getElementById('flash-state');
     const camQrResult = document.getElementById('cam-qr-result');
@@ -144,6 +143,7 @@
 
     const updateFlashAvailability = () => {
         scanner.hasFlash().then(hasFlash => {
+           console.log(hasFlash);
             flashToggle.style.display = hasFlash ? 'inline-block' : 'none';
         });
     };
@@ -158,7 +158,6 @@
             const option = document.createElement('option');
             option.value = camera.id;
             option.text = camera.label;
-            camList.add(option);
         }));
     });
 
@@ -166,11 +165,9 @@
     // for debugging
     window.scanner = scanner;
     scanner.setInversionMode('original');
-    camList.addEventListener('change', event => {
-        scanner.setCamera(event.target.value).then(updateFlashAvailability);
-    });
 
     flashToggle.addEventListener('click', () => {
+       console.log("TTT");
         scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
     });
     
