@@ -62,7 +62,6 @@
                 <table class="table">
                   <thead>
                     <tr>
-                      <th scope="col">#</th>
                       <th scope="col">發票日期</th>
                       <th scope="col">發票號碼</th>
                       <th scope="col">比對結果</th>
@@ -111,14 +110,16 @@
         console.log(result);
         //**豬排丼:1:178:可樂餅（套餐加點）:1:70
         //WQ91480437 1110114 3967000000ec000000f800000000 426095065 VaFTq08Yn7ZIjWI9Yzb3Q==:**********:2:2:1:
-        if(result.replace(/ /g, "").length > 10 && result !== lastResult){
+        if(result.substring(0, 2) !== '**' && result !== lastResult){
             let billId = result.substring(0, 10)
+            let strDate = result.substring(10, 7)
             lastResult = result;
             label.textContent = billId;
             camQrResultTimestamp.textContent = new Date().toString();
             label.style.color = 'teal';
             clearTimeout(label.highlightTimeout);
             label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+            addTbItem(strDate, billId, "test");
         }
         
     }
@@ -163,16 +164,13 @@
         scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
     });
 
-    function addTbItem(){
-      console.log("TTTTTTTTTTTT")
+    function addTbItem(date, uniNum, result){
       var tabel = document.getElementById('resultTable');
-      console.log(tabel);
-      tabel.innerHTML="<tr> \
-                        <th scope=\"row\">1</th> \
-                        <td>1</td> \
-                        <td>2</td> \
-                        <td>3</td> \
-                        </tr>";
+      tabel.innerHTML=`<tr> \
+                        <td>${date}</td> \
+                        <td>${uniNum}</td> \
+                        <td>${result}</td> \
+                        </tr>`;
    }
 
 
