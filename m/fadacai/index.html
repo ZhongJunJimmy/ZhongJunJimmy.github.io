@@ -143,7 +143,6 @@
 
     const updateFlashAvailability = () => {
         scanner.hasFlash().then(hasFlash => {
-           console.log(hasFlash);
             flashToggle.style.display = hasFlash ? 'inline-block' : 'none';
         });
     };
@@ -167,7 +166,6 @@
     scanner.setInversionMode('original');
 
     flashToggle.addEventListener('click', () => {
-       console.log("TTT");
         scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
     });
     
