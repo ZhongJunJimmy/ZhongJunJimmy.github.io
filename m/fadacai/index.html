@@ -68,11 +68,6 @@
                     </tr>
                   </thead>
                   <tbody id="resultTbody" >
-                    <tr>
-                      <td id = "tdDate">無對獎結果</td>
-                      <td id = "tdID"></td>
-                      <td id = "tdResult"></td>
-                    </tr>
                   </tbody>
                 </table>
                 <!--<b>Detected QR code: </b>-->
@@ -120,9 +115,18 @@
          label.style.color = 'teal';
          clearTimeout(label.highlightTimeout);
          label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-         document.getElementById("tdDate").innerHTML=`<p>${strDate.substring(0, 3)}年${strDate.substring(3, 5)}月${strDate.substring(5, 7)}日</p>`
-         document.getElementById("tdID").innerHTML=`<p>${billId}</p>`
-         document.getElementById("tdResult").innerHTML=`<p>${matchResult}</p>`
+         let row=document.createElement("tr"); //建立行
+         let tdDate=document.createElement("td"); //建立單元格
+         let tdID=document.createElement("td"); //建立單元格
+         let tdResult=document.createElement("td"); //建立單元格
+
+         tdDate.appendChild(document.createTextNode(`<p>${strDate.substring(0, 3)}年${strDate.substring(3, 5)}月${strDate.substring(5, 7)}日</p>`)); //為單元格新增內容
+         tdID.appendChild(document.createTextNode(`<p>${billId}</p>`)); //為單元格新增內容
+         tdResult.appendChild(document.createTextNode(`<p>${matchResult}</p>`)); //為單元格新增內容
+         row.appendChild(tdDate); //將單元格新增到行內
+         row.appendChild(tdID); //將單元格新增到行內
+         row.appendChild(tdResult); //將單元格新增到行內
+         document.getElementById("resultTbody").append(row); //將行新增到<tbody>中
       }
         
     }
