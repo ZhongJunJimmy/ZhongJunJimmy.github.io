@@ -25,104 +25,16 @@
          return check;
       }
 
+      
       if (!isMobile()) {
          top.location.href = location.href.replace("/m/fadacai", "");
       }
+      
    </script>
 
    <!-- Bootstrap core CSS -->
    <link href="../css/bootstrap.min.css" rel="stylesheet" />
-
-   <style>
-      body {
-        padding-top: 60px;
-        background: #f3efe0;
-      }
-
-      .bd-placeholder-img {
-         font-size: 1.125rem;
-         text-anchor: middle;
-         -webkit-user-select: none;
-         -moz-user-select: none;
-         user-select: none;
-      }
-
-      @media (min-width: 768px) {
-         .bd-placeholder-img-lg {
-            font-size: 3.5rem;
-         }
-      }
-
-      .profile-photo {
-         transform: rotate(-28deg);
-         max-width: 60%;
-         border-radius: 50%;
-         border: 3px solid #116f5c;
-         display: block;
-         margin: auto;
-         transition: all 0.25s linear;
-         -webkit-filter: grayscale(50%);
-         /* Safari */
-         filter: grayscale(50%);
-         margin-top: 10px;
-      }
-
-      h1 {
-         font-family: "Arial", sans-serif;
-         color: #00693e;
-         text-align: center;
-      }
-
-      h2 {
-         font-family: "Arial", sans-serif;
-         color: #00693e;
-      }
-
-      p {
-         word-wrap: break-word;
-         margin-bottom: 10px;
-         font-family: "Arial", sans-serif;
-         line-height: 2;
-         color: rgba(0, 0, 0, 0.8);
-      }
-
-      #contact .fa {
-         padding: 10px;
-         font-size: 30px;
-         width: 50px;
-         text-align: center;
-         text-decoration: none;
-         margin: 1px 2px;
-      }
-
-      #contact .fa:hover {
-         opacity: 0.7;
-      }
-
-      #contact .fa-facebook {
-         background: #3b5998;
-         color: white;
-      }
-
-      #contact .fa-Instagram {
-         background: #dd2a78;
-         color: white;
-      }
-
-      #contact .fa-github {
-         background: rgb(0, 0, 0);
-         color: white;
-      }
-
-      #contact a {
-         line-height: 32px;
-         margin-bottom: 20px;
-         opacity: 0.6;
-         filter: alpha(opacity=60);
-         text-decoration: none;
-         color: rgba(0, 0, 0, 0.8);
-      }
-   </style>
+   <link href="../css/fadacai.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -131,10 +43,6 @@
            <div class="container-fluid">
               <a class="navbar-brand" href="#">發票對獎工具
               </a>
-              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
-                 aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
-                 <span class="navbar-toggler-icon"></span>
-              </button>
               
            </div>
         </nav>
@@ -143,28 +51,36 @@
 
       <div class="container">
          <div class="row">
-            <div class="col-lg-3">
-               <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
-                <option value="none" selected>選擇月份</option>
-                <option value="nov-dec">11-12月</option>
-                <option value="sep-oct">9-10月</option>
-              </select>
-            </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-3">
+            <!-- /.col-lg-6 -->
+            <div class="col-lg-6">
                 <video style="width:100%;" id="qr-video"></video>
             </div>
-            <!-- /.col-lg-4 -->
-            <div class="col-lg-3">
-                <h1>兌獎結果</h1>
+            <!-- /.col-lg-6 -->
+            <div class="col-lg-6">
+                <h1>對獎結果</h1>
                 <hr/>
-                <b>Detected QR code: </b>
+                <table class="table">
+                  <thead>
+                    <tr>
+                      <th scope="col">#</th>
+                      <th scope="col">發票日期</th>
+                      <th scope="col">發票號碼</th>
+                      <th scope="col">比對結果</th>
+                    </tr>
+                  </thead>
+                  <tbody id="resultTable" >
+                    <tr>
+                      <th scope="row">1</th>
+                      <td>無對獎結果</td>
+                    </tr>
+                  </tbody>
+                </table>
+                <!--<b>Detected QR code: </b>
                 <span id="cam-qr-result">None</span>
                 <br>
                 <b>Last detected at: </b>
-                <span id="cam-qr-result-timestamp"></span>
+                <span id="cam-qr-result-timestamp"></span>-->
             </div>
-            <!-- /.col-lg-4 -->
          </div>
          <!-- /.row -->
          <div id="contact" style="text-align: center;">
@@ -193,6 +109,8 @@
 
     function setResult(label, result) {
         console.log(result);
+        //**豬排丼:1:178:可樂餅（套餐加點）:1:70
+        //WQ91480437 1110114 3967000000ec000000f800000000 426095065 VaFTq08Yn7ZIjWI9Yzb3Q==:**********:2:2:1:
         if(result.replace(/ /g, "").length > 10 && result !== lastResult){
             let billId = result.substring(0, 10)
             lastResult = result;
@@ -234,19 +152,31 @@
     });
 
     QrScanner.hasCamera().then(hasCamera => camHasCamera.textContent = hasCamera);
-
     // for debugging
     window.scanner = scanner;
     scanner.setInversionMode('original');
     camList.addEventListener('change', event => {
         scanner.setCamera(event.target.value).then(updateFlashAvailability);
     });
+    
     flashToggle.addEventListener('click', () => {
         scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
     });
-    document.getElementById('select-period').addEventListener('change', (e)=>{
-        scanner.start();
-    });
+
+    function addTbItem(){
+      console.log("TTTTTTTTTTTT")
+      var tabel = document.getElementById('resultTable');
+      console.log(tabel);
+      tabel.innerHTML="<tr> \
+                        <th scope=\"row\">1</th> \
+                        <td>1</td> \
+                        <td>2</td> \
+                        <td>3</td> \
+                        </tr>";
+   }
+
+
+    
 
 </script>
    <script src="../js/bootstrap.bundle.min.js"></script>
