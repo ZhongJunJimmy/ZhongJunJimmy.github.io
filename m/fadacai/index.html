@@ -67,9 +67,9 @@
                       <th scope="col">比對結果</th>
                     </tr>
                   </thead>
-                  <tbody id="resultTable" >
+                  <tbody id="resultTbody" >
                     <tr>
-                      <td>無對獎結果</td>
+                      <td id="tdRes">無對獎結果</td>
                     </tr>
                   </tbody>
                 </table>
@@ -106,19 +106,20 @@
     const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
 
     function setResult(label, result) {
-        console.log(result);
-        //**豬排丼:1:178:可樂餅（套餐加點）:1:70
-        //WQ91480437 1110114 3967000000ec000000f800000000 426095065 VaFTq08Yn7ZIjWI9Yzb3Q==:**********:2:2:1:
-        if(result.substring(0, 2) !== '**' && result !== lastResult){
-            let billId = result.substring(0, 10)
-            let strDate = result.substring(10, 7)
-            lastResult = result;
-            label.textContent = billId;
-            camQrResultTimestamp.textContent = new Date().toString();
-            label.style.color = 'teal';
-            clearTimeout(label.highlightTimeout);
-            label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-        }
+      console.log(result);
+      //**豬排丼:1:178:可樂餅（套餐加點）:1:70
+      //WQ91480437 1110114 3967000000ec000000f800000000 426095065 VaFTq08Yn7ZIjWI9Yzb3Q==:**********:2:2:1:
+      if(result.substring(0, 2) !== '**' && result !== lastResult){
+         let billId = result.substring(0, 10)
+         let strDate = result.substring(10, 7)
+         lastResult = result;
+         label.textContent = billId;
+         camQrResultTimestamp.textContent = new Date().toString();
+         label.style.color = 'teal';
+         clearTimeout(label.highlightTimeout);
+         label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
+         document.getElementById("tdRes").innerHTML="<p>content</p>"
+      }
         
     }
 
