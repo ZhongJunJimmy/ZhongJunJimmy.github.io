@@ -69,7 +69,7 @@
                   </thead>
                   <tbody id="resultTbody" >
                     <tr>
-                      <td id="tdRes">無對獎結果</td>
+                      <td>無對獎結果</td>
                     </tr>
                   </tbody>
                 </table>
@@ -118,7 +118,18 @@
          label.style.color = 'teal';
          clearTimeout(label.highlightTimeout);
          label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
-         document.getElementById("tdRes").innerHTML="<p>content</p>"
+         // create new row
+         let row=document.createElement("tr"); //建立行
+         let td1=document.createElement("td"); //建立單元格
+
+         td1.appendChild(document.createTextNode(strDate)); //為單元格新增內容
+         row.appendChild(td1); //將單元格新增到行內
+         td1.appendChild(document.createTextNode(billId)); //為單元格新增內容
+         row.appendChild(td1); //將單元格新增到行內
+         td1.appendChild(document.createTextNode("test")); //為單元格新增內容
+         row.appendChild(td1); //將單元格新增到行內
+
+         document.getElementById("resultTbody").append(row); //將行新增到<tbody>中
       }
         
     }
