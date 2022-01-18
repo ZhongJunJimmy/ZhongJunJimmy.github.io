@@ -75,10 +75,10 @@
                     </tr>
                   </tbody>
                 </table>
-                <b>Detected QR code: </b>
-                <!--<span id="cam-qr-result">None</span>
-                <br>
-                <b>Last detected at: </b>
+                <!--<b>Detected QR code: </b>-->
+                <span id="cam-qr-result">None</span>
+                
+                <!--<b>Last detected at: </b>
                 <span id="cam-qr-result-timestamp"></span>-->
             </div>
          </div>
@@ -104,7 +104,7 @@
     const camList = document.getElementById('cam-list');
     const camHasFlash = document.getElementById('cam-has-flash');
     const flashState = document.getElementById('flash-state');
-    //const camQrResult = document.getElementById('cam-qr-result');
+    const camQrResult = document.getElementById('cam-qr-result');
     //const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
 
     function setResult(label, result) {
@@ -116,7 +116,7 @@
          let matchResult = "nan";
          lastResult = result;
          label.textContent = billId;
-         camQrResultTimestamp.textContent = new Date().toString();
+         //camQrResultTimestamp.textContent = new Date().toString();
          label.style.color = 'teal';
          clearTimeout(label.highlightTimeout);
          label.highlightTimeout = setTimeout(() => label.style.color = 'inherit', 100);
