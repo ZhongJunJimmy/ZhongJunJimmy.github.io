@@ -113,7 +113,7 @@
       //WQ91480437 1110114 3967000000ec000000f800000000 426095065 VaFTq08Yn7ZIjWI9Yzb3Q==:**********:2:2:1:
       if(result.substring(0, 2) !== '**' && result !== lastResult){
          let billId = result.substring(0, 10);
-         let strDate = result.substring(11, 18);
+         let strDate = result.substring(10, 17);
          let matchResult = "nan";
          lastResult = result;
          label.textContent = billId;
