@@ -110,8 +110,8 @@
       //**豬排丼:1:178:可樂餅（套餐加點）:1:70
       //WQ91480437 1110114 3967000000ec000000f800000000 426095065 VaFTq08Yn7ZIjWI9Yzb3Q==:**********:2:2:1:
       if(result.substring(0, 2) !== '**' && result !== lastResult){
-         let billId = result.substring(0, 10)
-         let strDate = result.substring(10, 7)
+         let billId = result.substring(0, 10);
+         let strDate = result.substring(11, 18);
          lastResult = result;
          label.textContent = billId;
          camQrResultTimestamp.textContent = new Date().toString();
@@ -122,10 +122,8 @@
          let row=document.createElement("tr"); //建立行
          let td1=document.createElement("td"); //建立單元格
 
-         td1.appendChild(document.createTextNode(strDate)); //為單元格新增內容
-         row.appendChild(td1); //將單元格新增到行內
+         td1.appendChild(document.createTextNode(`${strDate.substring(0, 3)}年${strDate.substring(3, 6)}月${strDate.substring(6, 8)}日`)); //為單元格新增內容
          td1.appendChild(document.createTextNode(billId)); //為單元格新增內容
-         row.appendChild(td1); //將單元格新增到行內
          td1.appendChild(document.createTextNode("test")); //為單元格新增內容
          row.appendChild(td1); //將單元格新增到行內
 
