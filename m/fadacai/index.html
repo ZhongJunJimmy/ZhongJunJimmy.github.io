@@ -142,7 +142,6 @@
     const updateFlashAvailability = () => {
         scanner.hasFlash().then(hasFlash => {
             camHasFlash.textContent = hasFlash;
-            flashToggle.style.display = hasFlash ? 'inline-block' : 'none';
         });
     };
 
@@ -168,9 +167,6 @@
         scanner.setCamera(event.target.value).then(updateFlashAvailability);
     });
     
-    flashToggle.addEventListener('click', () => {
-        scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
-    });
 
    
 
