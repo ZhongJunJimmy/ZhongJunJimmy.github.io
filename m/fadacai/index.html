@@ -55,6 +55,9 @@
             <div class="col-lg-6">
                 <video style="width:100%;" id="qr-video"></video>
             </div>
+            <div>
+               <button id="flash-toggle">📸 Flash: <span id="flash-state">off</span></button>
+            </div>
             <!-- /.col-lg-6 -->
             <div class="col-lg-6">
                 <h1>對獎結果</h1>
@@ -97,7 +100,7 @@
     const video = document.getElementById('qr-video');
     const camHasCamera = document.getElementById('cam-has-camera');
     const camList = document.getElementById('cam-list');
-    const camHasFlash = document.getElementById('cam-has-flash');
+    const flashToggle = document.getElementById('flash-toggle');
     const flashState = document.getElementById('flash-state');
     const camQrResult = document.getElementById('cam-qr-result');
     //const camQrResultTimestamp = document.getElementById('cam-qr-result-timestamp');
@@ -141,7 +144,7 @@
 
     const updateFlashAvailability = () => {
         scanner.hasFlash().then(hasFlash => {
-            camHasFlash.textContent = hasFlash;
+            flashToggle.style.display = hasFlash ? 'inline-block' : 'none';
         });
     };
 
@@ -166,11 +169,10 @@
     camList.addEventListener('change', event => {
         scanner.setCamera(event.target.value).then(updateFlashAvailability);
     });
-    
 
-   
-
-
+    flashToggle.addEventListener('click', () => {
+        scanner.toggleFlash().then(() => flashState.textContent = scanner.isFlashOn() ? 'on' : 'off');
+    });
     
 
 </script>
