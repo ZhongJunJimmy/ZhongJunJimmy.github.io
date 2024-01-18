@@ -40,7 +40,7 @@ header {
 }
 
 header:hover {
-    background: #dbe000;
+    background: #28C8C8;
     transition: all 0.4s;
 }
 
@@ -151,7 +151,7 @@ header:hover {
 }
 
 .close:hover {
-    background: #dbe000 no-repeat center top;
+    background: #28C8C8 no-repeat center top;
     transition: all 0.4s;
 }
 
@@ -426,7 +426,7 @@ a.web {
 }
 
 .highslide:hover img {
-    border: 4px solid #dbe000;
+    border: 4px solid #28C8C8;
     transition: all 0.4s;
 }
 
