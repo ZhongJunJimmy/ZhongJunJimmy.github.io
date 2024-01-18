@@ -11,7 +11,7 @@ var showDiv = function() {
     if (!isShow) {
         $("#RightDiv").animate({ 'right': '0px' }, 600, function() {
             isShow = true;
-            $("header").css({ 'background': '#dbe000' });
+            $("header").css({ 'background': '#28C8C8' });
         });
     } else {
         $("#RightDiv").animate({ 'right': '-530px' }, 600, function() {
